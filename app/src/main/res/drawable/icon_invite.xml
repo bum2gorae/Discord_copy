@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/discord_invite"
+    android:gravity="center"
+    android:shape="rectangle">
+    <corners android:radius="20dp" /> <!-- 이미지를 둥글게 만드는 반지름 설정 -->
+</bitmap>

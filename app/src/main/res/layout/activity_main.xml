@@ -5,15 +5,401 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1A1A20"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/channel_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="20dp"
+        android:text="@string/channel_name"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/channel_search_bar"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:alpha="0.5"
+        android:background="@drawable/search"
+        android:hint="검색하기"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/channel_icon_invite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_title" />
+
+    <ImageView
+        android:id="@+id/channel_icon_invite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/icon_invite"
+        app:layout_constraintEnd_toStartOf="@id/channel_icon_event"
+        app:layout_constraintStart_toEndOf="@id/channel_search_bar"
+        app:layout_constraintTop_toTopOf="@id/channel_search_bar" />
+
+    <ImageView
+        android:id="@+id/channel_icon_event"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/icon_event"
+        app:layout_constraintStart_toEndOf="@id/channel_icon_invite"
+        app:layout_constraintTop_toTopOf="@id/channel_search_bar" />
+
+    <View
+        android:id="@+id/channel_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:alpha="0.1"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/channel_search_bar" />
+
+    <ImageView
+        android:id="@+id/channel_tree1_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:src="@drawable/icon_arrow_drop_down"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/channel_tree1_name" />
+
+    <TextView
+        android:id="@+id/channel_tree1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="20dp"
+        android:text="확인해주세요!"
+        android:textColor="@color/text_default"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_line" />
+
+    <TextView
+        android:id="@+id/channel_tree1_sharp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree1_name" />
+
+    <TextView
+        android:id="@+id/channel_tree1_tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="공지사항"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_space_1"
+        app:layout_constraintStart_toEndOf="@id/channel_tree1_sharp_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree1_name" />
+
+    <Space
+        android:id="@+id/channel_space_1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree1_sharp_1" />
+
+    <ImageView
+        android:id="@+id/channel_tree2_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:src="@drawable/icon_arrow_drop_down"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_dropdown"
+        app:layout_constraintTop_toTopOf="@id/channel_tree2_name" />
+
+    <TextView
+        android:id="@+id/channel_tree2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:text="무엇이든 물어보세요!"
+        android:textColor="@color/text_default"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_space_1" />
+
+    <TextView
+        android:id="@+id/channel_tree2_sharp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree2_name" />
+
+    <TextView
+        android:id="@+id/channel_tree2_tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="동기에게-물어봐"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_space_2"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree2_name" />
+
+    <Space
+        android:id="@+id/channel_space_2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree2_sharp_1" />
+
+    <ImageView
+        android:id="@+id/channel_tree3_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:src="@drawable/icon_arrow_drop_down"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_dropdown"
+        app:layout_constraintTop_toTopOf="@id/channel_tree3_name" />
+
+    <TextView
+        android:id="@+id/channel_tree3_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:text="열심히 교육받아요!"
+        android:textColor="@color/text_default"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_space_2" />
+
+    <TextView
+        android:id="@+id/channel_tree3_sharp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_name" />
+
+    <TextView
+        android:id="@+id/channel_tree3_tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="인공지능-과정"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_tree3_tv_2"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_name" />
+
+    <TextView
+        android:id="@+id/channel_tree3_sharp_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_tv_1" />
+
+    <TextView
+        android:id="@+id/channel_tree3_tv_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="앱-과정"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_tree3_tv_3"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_tv_1" />
+
+    <TextView
+        android:id="@+id/channel_tree3_sharp_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_tv_2" />
+
+    <TextView
+        android:id="@+id/channel_tree3_tv_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="프로젝트-과정"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_space_3"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_tv_2" />
+
+    <Space
+        android:id="@+id/channel_space_3"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree3_sharp_3" />
+
+    <ImageView
+        android:id="@+id/channel_tree4_dropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.5"
+        android:src="@drawable/icon_arrow_drop_down"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_dropdown"
+        app:layout_constraintTop_toTopOf="@id/channel_tree4_name" />
+
+    <TextView
+        android:id="@+id/channel_tree4_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:text="친해져요!"
+        android:textColor="@color/text_default"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_space_3" />
+
+    <TextView
+        android:id="@+id/channel_tree4_sharp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_name" />
+
+    <TextView
+        android:id="@+id/channel_tree4_tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="점심-추천해요"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_tree4_tv_2"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_name" />
+
+    <TextView
+        android:id="@+id/channel_tree4_sharp_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_tv_1" />
+
+    <TextView
+        android:id="@+id/channel_tree4_tv_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="오프더레코드"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_tree4_tv_3"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_tv_1" />
+
+    <TextView
+        android:id="@+id/channel_tree4_sharp_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_start_margin"
+        android:layout_marginTop="10dp"
+        android:scaleX="1.4"
+        android:text="#"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_tv_2" />
+
+    <TextView
+        android:id="@+id/channel_tree4_tv_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="정보-공유해요"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/channel_tree4_tv_4"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_tv_2" />
+
+    <ImageView
+        android:id="@+id/channel_icon_speaker_1"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/icon_volume_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/channel_tree4_tv_4"/>
+
+    <TextView
+        android:id="@+id/channel_tree4_tv_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="스터디실"
+        android:textColor="@color/text_default"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/channel_tree1_tv_1"
+        app:layout_constraintTop_toBottomOf="@id/channel_tree4_tv_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
