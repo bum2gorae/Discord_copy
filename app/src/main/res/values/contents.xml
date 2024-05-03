@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tree1_1">공지사항</string>
+    <string name="tree1_2"></string>
+    <string name="tree1_3"></string>
+    <string name="tree1_4"></string>
+    <string name="tree1_5"></string>
+    <string name="tree2_1">동기에게-물어봐</string>
+    <string name="tree2_2"></string>
+    <string name="tree2_3"></string>
+    <string name="tree2_4"></string>
+    <string name="tree2_5"></string>
+    <string name="tree3_1">인공지능-과정</string>
+    <string name="tree3_2">앱-과정</string>
+    <string name="tree3_3">프로젝트-과정</string>
+    <string name="tree3_4"></string>
+    <string name="tree3_5"></string>
+    <string name="tree4_1">점심-추천해요</string>
+    <string name="tree4_2">오프더레코드</string>
+    <string name="tree4_3">정보-공유해요</string>
+    <string name="tree4_4">스터디실</string>
+    <string name="tree4_5"></string>
+    <string name="tree5_1"></string>
+    <string name="tree5_2"></string>
+    <string name="tree5_3"></string>
+    <string name="tree5_4"></string>
+    <string name="tree5_5"></string>
+</resources>
